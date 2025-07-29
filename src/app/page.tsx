@@ -1,33 +1,38 @@
 'use client'
 
-import { supabase } from '@/lib/supabase';
+import { useSession, signIn, signOut } from 'next-auth/react'
 
 export default function LandingPage() {
-	const handleLogin = async () => {
-		const { error } = await supabase.auth.signInWithOAuth({
-			provider: 'google',
-		})
+  const { data: session, status } = useSession()
 
-		if (error) {
-			console.error('Login error:', error.message)
-		} else {
+  if (status === 'loading') {
+    return null // atau <LoadingSpinner />
+  }
 
-		}
-	}
   return (
-		<main className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
-      <div className="text-center max-w-md">
-        <h1 className="text-4xl font-bold mb-4">💰 Myoney</h1>
-        <p className="mb-6 text-gray-600">
-          Tracker keuangan pribadi & bisnis kamu, terintegrasi dengan AI & sedekah.
-        </p>
-        <button
-          onClick={handleLogin}
-          className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
-        >
-          Sign Up / Login with Google
-        </button>
+    <main className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="text-center">
+        <h1 className="text-3xl font-bold mb-6">💰 Myoney</h1>
+
+        {!session ? (
+          <button
+            onClick={() => signIn('google')}
+            className="bg-black text-white px-6 py-3 rounded-lg"
+          >
+            Login dengan Google
+          </button>
+        ) : (
+          <>
+            <p className="mb-4">Halo, {session.user?.name}</p>
+            <button
+              onClick={() => signOut()}
+              className="bg-red-500 text-white px-6 py-3 rounded-lg"
+            >
+              Logout
+            </button>
+          </>
+        )}
       </div>
     </main>
-  );
+  )
 }
