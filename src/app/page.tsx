@@ -10,23 +10,23 @@ export default function LandingPage() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[var(--color-background)]">
+    <main className="min-h-screen flex flex-col px-16 py-4 items-center justify-center bg-[var(--color-background)]">
       <div className="text-center px-4">
-        <h1 className="text-3xl font-bold mb-6">💰 Myoney</h1>
+        <h1 className="mt-8 mb-8 text-3xl font-bold">💰 MyOney</h1>
 
         {!session ? (
           <button
             onClick={() => signIn('google')}
-            className="bg-black text-white px-6 py-3 rounded-lg"
+            className="text-white text-lg rounded-full mt-4 mb-8 px-6 py-3 bg-[var(--color-brand)]"
           >
-            Login dengan Google
+            Coba Gratis
           </button>
         ) : (
           <>
             <p className="mb-4">Halo, {session.user?.name}</p>
             <button
               onClick={() => signOut()}
-              className="bg-red-500 text-white px-6 py-3 rounded-lg"
+              className="text-white rounded-full m-1 px-8 py-4 bg-[var(--color-brand)]"  
             >
               Logout
             </button>

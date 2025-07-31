@@ -47,11 +47,6 @@ main {
 
 main button {
 	font-family: var(--font-urbanist);
-	font-weight: 700;
-	margin-top: 2rem;
-	margin-bottom: 4rem;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
-	padding-top: 0.25rem;
-	padding-bottom: 0.25rem;
+	font-weight: 800;
+	font-style: italic;
 }

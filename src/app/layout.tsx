@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			</head>
       <body className="bg-[var(--color-background)]">
-				<Navbar />
+					<CustomSessionProvider><Navbar /></CustomSessionProvider>
 				<main>
 					<CustomSessionProvider>{children}</CustomSessionProvider>
 				</main>
