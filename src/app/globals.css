@@ -17,3 +17,41 @@
 	--font-urbanist: 'Urbanist', sans-serif; /* Clean sans-serif font for body text */
 	--font-kode-mono: 'Kode Mono', monospace; /* Monospace font for code snippets */
 }
+
+nav {
+	font-family: var(--font-urbanist);
+	font-weight: 400;
+	margin: 1rem;
+	border-width: 2px;
+	border-color: var(--color-brand);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	background: radial-gradient(
+		circle, 
+		rgba(255, 255, 255, 0.05) 0%, 
+		rgba(255, 255, 255, 0.2) 100%
+	);
+	backdrop-filter: blur(10px);
+}
+
+nav button {
+	font-family: var(--font-urbanist);
+	font-weight: 800;
+	font-style: italic;
+	background-color: var(--color-brand);
+}
+
+main {
+	font-family: var(--font-urbanist);
+	font-weight: 400;
+}
+
+main button {
+	font-family: var(--font-urbanist);
+	font-weight: 700;
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+}
