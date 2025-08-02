@@ -10,6 +10,12 @@ export const authOptions: AuthOptions = {
   ],
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: '/', // redirect ke landing kalau belum login
+    signIn: '/',
+		error: '/auth/error',
   },
+	callbacks: {
+		async redirect({ url, baseUrl }) {
+			return '/dashboard'
+		},
+	},
 }

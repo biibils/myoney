@@ -1,13 +1,16 @@
 'use client'
 import Link from "next/link"
 import Image from "next/image"
-import { useSession, signIn, signOut } from 'next-auth/react'
+import Loader from "@/components/Loader"
+import { useSession, signIn } from 'next-auth/react'
 
 export default function Navbar() {
-	const { data: session, status } = useSession()
+	const { status } = useSession()
 
 	if (status === 'loading') {
-		return null
+		return (
+			<Loader />
+		)
 	}
 
 	return (
@@ -15,7 +18,7 @@ export default function Navbar() {
 			<nav className="navbar flex rounded-full items-center justify-between max-w-fit z-50">
 				<div className="navbar-start justify-center items-center p-4">
 					<Link href="#">
-						<Image src="/home-filled.svg" alt="Logo"width={30} height={30} className="object-contain" />					
+						<Image src="/home-filled.svg" alt="Logo" width={30} height={30} className="object-contain" />					
 					</Link>
 				</div>
 				<div className="justify-center items-center">
@@ -44,19 +47,10 @@ export default function Navbar() {
 					</ul>
 				</div>
 				<div className="navbar-end justify-center items-center">
-					{!session ? (
-						<button onClick={() => signIn('google')} 
-						className="text-white text-lg rounded-full m-1.5 px-6 py-3">
-							Masuk
-						</button>
-					) : (
-						<>
-						<button onClick={() => signOut()} 
-						className="test-white text-lg rounded full m-1.5 px-6 py-3">
-							Log Out
-						</button>
-						</>
-					)}
+					<button onClick={() => signIn('google', { callbackUrl: '/dashboard' })} 
+					className="text-white text-lg rounded-full m-1.5 px-6 py-3">
+						Masuk
+					</button>
 				</div>
 			</nav>
 		</div>
