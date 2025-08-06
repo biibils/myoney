@@ -25,7 +25,7 @@ export default function LandingPage() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col px-16 py-4 items-center justify-center bg-[var(--color-background)]">
+    <main className="min-h-screen flex flex-col px-6 py-4 items-center justify-center bg-center" style={{ backgroundImage: "url('/background.webp')"}}>
 			<Navbar />
       <div className="text-center px-4">
         <h1 className="mt-8 mb-8 text-3xl font-bold">💰 MyOney</h1>

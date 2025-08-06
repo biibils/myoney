@@ -14,8 +14,9 @@ export const authOptions: AuthOptions = {
 		error: '/auth/error',
   },
 	callbacks: {
-		async redirect({ url, baseUrl }) {
-			return '/dashboard'
+		async session({ session, token } ) {
+			session.user.id = token.sub;
+			return session
 		},
 	},
 }
