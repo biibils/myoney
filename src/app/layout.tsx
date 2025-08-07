@@ -1,23 +1,30 @@
 import './globals.css'
-import CustomSessionProvider from '@/lib/SessionProvider'
+import { Metadata } from 'next'
+import type { Viewport } from 'next'
 
-export const metadata = {
-	title: "Your Wealth Partner",
-	description: "Track your wealth by using this app",
-	keywords: "financial tracker, financial planner, dashboard, islamic finance",
-	author: "Billy Sutawijaya",
+export const viewport: Viewport = {
+	width: 'device-width',
+  initialScale: 1,
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const metadata: Metadata = {
+  title: "Your Wealth Partner",
+  description: "Track your wealth by using this app",
+  keywords: "financial tracker, financial planner, dashboard, islamic finance",
+  authors: [{ name: "Billy Sutawijaya" }],
+}
+
+export default function RootLayout({ 
+  children 
+}: { 
+  children: React.ReactNode 
+}) {
   return (
-    <html lang="en">
-			<head>
-				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-			</head>
+    <html lang="en" suppressHydrationWarning>
       <body className="bg-[var(--color-background)]">
-				<main>
-					<CustomSessionProvider>{children}</CustomSessionProvider>
-				</main>
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   )

@@ -2,10 +2,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import Loader from "@/components/Loader"
-import { useSession, signIn } from 'next-auth/react'
 
 export default function Navbar() {
-	const { status } = useSession()
 
 	if (status === 'loading') {
 		return (
@@ -47,9 +45,9 @@ export default function Navbar() {
 					</ul>
 				</div>
 				<div className="navbar-end justify-center items-center">
-					<button onClick={() => signIn('google', { callbackUrl: '/dashboard' })} 
+					<button 
 					className="text-white text-lg rounded-full m-1.5 px-6 py-3">
-						Masuk
+						Log In
 					</button>
 				</div>
 			</nav>
