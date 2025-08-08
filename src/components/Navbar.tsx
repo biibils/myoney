@@ -2,12 +2,22 @@
 import Link from "next/link"
 import Image from "next/image"
 import Loader from "@/components/Loader"
+import { useState, useEffect } from 'react'
 
 export default function Navbar() {
+	const [status, setStatus] = useState('loading')
+
+	useEffect(() => {
+		setTimeout(() => {
+			setStatus('loaded')
+		}, 1500)
+	}, [])
 
 	if (status === 'loading') {
 		return (
-			<Loader />
+			<main className="min-h-screen flex flex-col px-16 py-4 items-center justify-center bg-gray-950">
+				<Loader />
+			</main>
 		)
 	}
 
