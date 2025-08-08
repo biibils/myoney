@@ -2,8 +2,17 @@
 
 import Navbar from "@/components/Navbar"
 import Loader from "@/components/Loader"
+import { useState, useEffect } from 'react'
 
 export default function LandingPage() {
+	const [status, setStatus] = useState('loading')
+
+	useEffect(() => {
+		setTimeout(() => {
+			setStatus('loaded')
+		}, 1500)
+	}, [])
+
   if (status === 'loading') {
     return (
 			<main className="min-h-screen flex flex-col px-16 py-4 items-center justify-center bg-gray-950">
