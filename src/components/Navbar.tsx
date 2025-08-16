@@ -1,26 +1,8 @@
 'use client'
-import Link from "next/link"
-import Image from "next/image"
-import Loader from "@/components/Loader"
-import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Navbar() {
-	const [status, setStatus] = useState('loading')
-
-	useEffect(() => {
-		setTimeout(() => {
-			setStatus('loaded')
-		}, 1500)
-	}, [])
-
-	if (status === 'loading') {
-		return (
-			<main className="min-h-screen flex flex-col px-16 py-4 items-center justify-center bg-gray-950">
-				<Loader />
-			</main>
-		)
-	}
-
 	return (
 		<div className="sticky top-0 flex w-full justify-center">
 			<nav className="navbar flex rounded-full items-center justify-between max-w-fit z-50">
@@ -55,10 +37,12 @@ export default function Navbar() {
 					</ul>
 				</div>
 				<div className="navbar-end justify-center items-center">
-					<button 
-					className="text-white text-lg rounded-full m-1.5 px-6 py-3">
+					<Link href="/login">
+						<button 
+						className="px-6 py-3 m-1.5 text-white text-lg rounded-full bg-[var(--color-brand)] hover:bg-[var(--color-brand-darkest)]">
 						Log In
-					</button>
+						</button>
+					</Link>
 				</div>
 			</nav>
 		</div>

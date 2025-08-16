@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Orbitron:wght@400..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 :root {
 	--color-brand: #2563EB; /* Blue for brand accent */
-	--color-brand-darkest: #1E40AF; /* Darker Blue for brand accent */
+	--color-brand-darkest: #1e40af; /* Darker Blue for brand accent */
 	--color-background: #f3f3f3; /* Light background color */
 	--color-surface: #f9fafb; /* Light surface color */
 	--color-text: #111827; /* Dark text color */
@@ -12,10 +11,17 @@
 	--color-succes: #22C55e; /* Green for success messages */
 	--color-warning: #fbbf24; /* Yellow for warnings */
 	--color-error: #ef4444; /* Red for error messages */
+}
 
-	--font-orbitron: 'Orbitron', sans-serif; /* Futuristic font for headings */
-	--font-urbanist: 'Urbanist', sans-serif; /* Clean sans-serif font for body text */
-	--font-kode-mono: 'Kode Mono', monospace; /* Monospace font for code snippets */
+h1, h3 {
+	font-family: var(--font-orbitron);
+	font-weight: 800;
+}
+
+p {
+	font-family: var(--font-urbanist);
+	font-weight: 400;
+	color: var(--color-text);
 }
 
 nav {
@@ -33,22 +39,28 @@ nav {
 	backdrop-filter: blur(10px);
 }
 
-nav button {
-	font-family: var(--font-urbanist);
-	font-weight: 800;
-	font-style: italic;
-	background-color: var(--color-brand);
+.card {
+	margin: 1rem;
+	border: 2px solid var(--color-brand);
+	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+	background: radial-gradient(
+		circle, 
+		rgba(255, 255, 255, 0.05) 0%, 
+		rgba(255, 255, 255, 0.2) 100%
+	);
+	backdrop-filter: blur(10px);
+	border-radius: 1rem;
 }
 
-main {
-	font-family: var(--font-urbanist);
-	font-weight: 400;
-}
-
-main button {
+form label {
 	font-family: var(--font-urbanist);
 	font-weight: 800;
-	font-style: italic;
+	color: var(--color-text-secondary);
+}
+
+button {
+	font-family: var(--font-urbanist);
+	font-weight: 800;
 }
 
 .digit {

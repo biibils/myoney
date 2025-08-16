@@ -1,4 +1,5 @@
 import './globals.css'
+import { orbitron, urbanist, kodeMono } from '@/lib/fonts'
 import { Metadata } from 'next'
 import type { Viewport } from 'next'
 
@@ -20,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode 
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="bg-[var(--color-background)]">
+    <html lang="en" className={`${orbitron.variable} ${urbanist.variable} ${kodeMono.variable}`} suppressHydrationWarning>
+      <body>
         <main>
           {children}
         </main>

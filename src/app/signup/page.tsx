@@ -1,12 +1,12 @@
 'use client'
 
-import { login } from '../actions'
+import { signup } from '../actions'
 import Link from 'next/link'
 import Loader from '@/components/Loader'
 import { GoogleAuthButton } from '@/components/GoogleAuthButton'
 import { useState, useEffect } from 'react'
 
-export default function LoginPage() {
+export default function SignupPage() {
 	const [status, setStatus] = useState('loading')
 
 	useEffect(() => {
@@ -17,26 +17,26 @@ export default function LoginPage() {
 
 	if (status === 'loading') {
 		return (
-				<Loader />
+			<Loader />
 		)
 	}
 
-  return (
+	return (
 		<div className="flex flex-col min-h-screen px-16 py-4 items-center justify-center bg-center" style={{ backgroundImage: "url('/background.webp')"}}>
 			<div className="card w-sm items-center justify-center p-4 rounded-xl">
-				<h3 className="w-full text-center text-lg">ًWelcome back to your Journey</h3>
+				<h3 className="w-full text-center text-lg">Start your Journey today with Us!</h3>
 				<form className="flex flex-col w-full space-y-2 p-4">				
-      		<label htmlFor="email" className="w-full pl-2 mb-1 text-sm">Email</label>
-    			<input 
+					<label htmlFor="email" className="w-full pl-2 mb-1 text-sm">Email</label>
+					<input 
 						id="email"
 						name="email"
 						type="email" 
 						placeholder="Type your email here" 
 						className="w-full p-2 mb-6 rounded-full text-xs bg-gray-200 placeholder-gray-400 shadow-inner focus:ring-1 focus:ring-[var(--color-brand)] outline-none" 
 						required />
-      	
+				
 					<label htmlFor="password" className="w-full pl-2 mb-1 text-sm">Password</label>
-      		<input 
+					<input 
 						id="password" 
 						name="password" 
 						type="password" 
@@ -44,13 +44,13 @@ export default function LoginPage() {
 						className="w-full p-2 rounded-full text-xs bg-gray-200 placeholder-gray-400 shadow-inner focus:ring-1 focus:ring-[var(--color-brand)] outline-none"
 						required />
 					<Link href="/reset-password" className="w-full pr-2 mb-4 text-end text-xs text-[var(--color-brand)]">Forgot password?</Link>
-      		<button formAction={login} className="w-full rounded-full px-4 py-2 bg-[var(--color-brand)]">Log In</button>
+					<button formAction={signup} className="w-full rounded-full px-4 py-2 bg-[var(--color-brand)]">Sign Up</button>
 				</form>
-				<p className="w-full px-6 mb-4 text-start text-xs">Dont have an account? <Link href="/signup" className="text-[var(--color-brand)]">Sign Up First!</Link></p>
+				<p className="w-full px-6 mb-4 text-start text-xs">Already have an account? <Link href="/login" className="text-[var(--color-brand)]">Log In here!</Link></p>
 				<div className="flex flex-col w-full px-4 py-2">
-					<GoogleAuthButton mode="login" redirectPath="/dashboard" />
+					<GoogleAuthButton mode="signup" redirectPath="/dashboard" />
 				</div>
 			</div>	
 		</div>
-  )
+	)
 }
