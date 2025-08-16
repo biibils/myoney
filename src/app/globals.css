@@ -13,9 +13,9 @@
 	--color-error: #ef4444; /* Red for error messages */
 }
 
-h1, h3 {
+h1, h2, h3 {
 	font-family: var(--font-orbitron);
-	font-weight: 800;
+	font-weight: 900;
 }
 
 p {
@@ -61,6 +61,7 @@ form label {
 button {
 	font-family: var(--font-urbanist);
 	font-weight: 800;
+	transform: skewX(-10deg);
 }
 
 .digit {

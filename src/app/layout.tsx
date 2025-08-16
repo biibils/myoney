@@ -9,7 +9,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "Your Wealth Partner",
+  title: "Temanmu menuju Kaya yang Berkah",
   description: "Track your wealth by using this app",
   keywords: "financial tracker, financial planner, dashboard, islamic finance",
   authors: [{ name: "Billy Sutawijaya" }],
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode 
 }) {
   return (
-    <html lang="en" className={`${orbitron.variable} ${urbanist.variable} ${kodeMono.variable}`} suppressHydrationWarning>
+    <html lang="id" className={`${orbitron.variable} ${urbanist.variable} ${kodeMono.variable}`} suppressHydrationWarning>
       <body>
         <main>
           {children}

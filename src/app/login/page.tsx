@@ -24,14 +24,14 @@ export default function LoginPage() {
   return (
 		<div className="flex flex-col min-h-screen px-16 py-4 items-center justify-center bg-center" style={{ backgroundImage: "url('/background.webp')"}}>
 			<div className="card w-sm items-center justify-center p-4 rounded-xl">
-				<h3 className="w-full text-center text-lg">ًWelcome back to your Journey</h3>
+				<h3 className="w-full text-center text-lg">ًWelkam Back Orang Kaya Berkah!</h3>
 				<form className="flex flex-col w-full space-y-2 p-4">				
       		<label htmlFor="email" className="w-full pl-2 mb-1 text-sm">Email</label>
     			<input 
 						id="email"
 						name="email"
 						type="email" 
-						placeholder="Type your email here" 
+						placeholder="Masukkan email kamu" 
 						className="w-full p-2 mb-6 rounded-full text-xs bg-gray-200 placeholder-gray-400 shadow-inner focus:ring-1 focus:ring-[var(--color-brand)] outline-none" 
 						required />
       	
@@ -43,10 +43,10 @@ export default function LoginPage() {
 						placeholder="Type your password here"
 						className="w-full p-2 rounded-full text-xs bg-gray-200 placeholder-gray-400 shadow-inner focus:ring-1 focus:ring-[var(--color-brand)] outline-none"
 						required />
-					<Link href="/reset-password" className="w-full pr-2 mb-4 text-end text-xs text-[var(--color-brand)]">Forgot password?</Link>
-      		<button formAction={login} className="w-full rounded-full px-4 py-2 bg-[var(--color-brand)]">Log In</button>
+					<Link href="/reset-password" className="w-full pr-2 mb-4 text-end text-xs text-[var(--color-brand)]">Lupa password?</Link>
+      		<button formAction={login} className="w-full rounded-full px-4 py-2 text-white bg-[var(--color-brand)] hover:bg-[var(--color-brand-darkest)]">Log In</button>
 				</form>
-				<p className="w-full px-6 mb-4 text-start text-xs">Dont have an account? <Link href="/signup" className="text-[var(--color-brand)]">Sign Up First!</Link></p>
+				<p className="w-full px-6 mb-4 text-start text-xs">Belum punya akun? <Link href="/signup" className="text-[var(--color-brand)]">Daftar dulu disini!</Link></p>
 				<div className="flex flex-col w-full px-4 py-2">
 					<GoogleAuthButton mode="login" redirectPath="/dashboard" />
 				</div>
