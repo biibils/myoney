@@ -1,28 +1,22 @@
-import { createClient } from '@supabase/supabase-js';
-import React from 'react';
-import Image from 'next/image';
+import { createClient } from '@/utils/supabase/client'
+import React from 'react'
+import Image from 'next/image'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL as string,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
-);
 
-interface GoogleAuthButtonProps {
-	mode?: 'login' | 'signup';
-  redirectPath?: string; // opsional: path tujuan setelah login
-}
-
-export const GoogleAuthButton: React.FC<GoogleAuthButtonProps> = ({ mode = 'login', redirectPath = '/dashboard' }) => {
+export const GoogleAuthButton: React.FC = () => {
   const handleGoogleLogin = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
+    const supabase = createClient()
+		await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${window.location.origin}${redirectPath}`
-      }
-    });
-
-    if (error) console.error(`Google ${mode} error:`, error.message);
-  };
+        redirectTo: `http://localhost:3000/auth/callback`,
+				queryParams: {
+					access_type: 'offline',
+					prompt: 'consent',
+				},
+      },
+    })
+  }
 
   return (
     <button
@@ -34,7 +28,7 @@ export const GoogleAuthButton: React.FC<GoogleAuthButtonProps> = ({ mode = 'logi
         alt="Google logo"
 				width={20} height={20}
       />
-      <span className="text-gray-700 font-medium">Continue with Google</span>
+      <span className="text-gray-700 font-medium">Lanjut dengan Google</span>
     </button>
   );
 };

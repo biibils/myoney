@@ -61,7 +61,6 @@ form label {
 button {
 	font-family: var(--font-urbanist);
 	font-weight: 800;
-	transform: skewX(-10deg);
 }
 
 .digit {

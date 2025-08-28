@@ -1,6 +1,6 @@
 'use client'
 
-import { login } from '../actions'
+import { login } from './../actions'
 import Link from 'next/link'
 import Loader from '@/components/Loader'
 import { GoogleAuthButton } from '@/components/GoogleAuthButton'
@@ -48,7 +48,7 @@ export default function LoginPage() {
 				</form>
 				<p className="w-full px-6 mb-4 text-start text-xs">Belum punya akun? <Link href="/signup" className="text-[var(--color-brand)]">Daftar dulu disini!</Link></p>
 				<div className="flex flex-col w-full px-4 py-2">
-					<GoogleAuthButton mode="login" redirectPath="/dashboard" />
+					<GoogleAuthButton />
 				</div>
 			</div>	
 		</div>

@@ -29,8 +29,7 @@ export default function LandingPage() {
 				<Link href="/signup">
 					<button
           	className="text-white text-lg rounded-full mt-4 mb-8 px-6 py-3 bg-[var(--color-brand)] hover:bg-[var(--color-brand-darkest)]"
-        	>
-        	Start Your Journey Now!
+        	>Start Your Journey Now!
         	</button>
 				</Link>
         
