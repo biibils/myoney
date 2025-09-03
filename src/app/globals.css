@@ -39,6 +39,18 @@ nav {
 	backdrop-filter: blur(10px);
 }
 
+aside {
+	font-family: var(--font-urbanist);
+	font-weight: 400;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	background: radial-gradient(
+		circle, 
+		rgba(255, 255, 255, 0.05) 0%, 
+		rgba(255, 255, 255, 0.2) 100%
+	);
+	backdrop-filter: blur(10px);
+}
+
 .card {
 	margin: 1rem;
 	border: 2px solid var(--color-brand);
