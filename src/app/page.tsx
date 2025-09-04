@@ -21,14 +21,14 @@ export default function LandingPage() {
   }
 	
   return (
-		<div className="flex flex-col min-h-screen px-6 py-4 items-center justify-center bg-center" style={{ backgroundImage: "url('/background.webp')"}}>
+		<div className="flex flex-col min-h-screen px-6 py-4 items-center justify-center bg-[var(--color-backgrounde)]">
 			<Navbar />
     	<div className="text-center px-4">
       	<h1 className="mt-8 mb-8 text-5xl">Play with Your Money on MyOney</h1>
 
 				<Link href="/signup">
 					<button
-        		className="text-white text-lg rounded-full mt-4 mb-8 px-6 py-3 bg-[var(--color-brand)] hover:bg-[var(--color-brand-darkest)]"
+        		className="text-white text-lg rounded-full mt-4 mb-8 px-6 py-3 bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)]"
       		>Start Your Journey Now!
       		</button>
 				</Link>

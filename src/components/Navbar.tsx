@@ -5,7 +5,7 @@ import Image from 'next/image'
 export default function Navbar() {
 	return (
 		<div className="sticky top-0 flex w-full justify-center">
-			<nav className="navbar flex rounded-full items-center justify-between max-w-fit z-50">
+			<nav className="landingnav navbar flex rounded-full items-center justify-between max-w-fit z-50">
 				<div className="navbar-start justify-center items-center p-4">
 					<Link href="#">
 						<Image src="/home.svg" alt="Logo" width={30} height={30} className="object-contain" />					
@@ -39,7 +39,7 @@ export default function Navbar() {
 				<div className="navbar-end justify-center items-center">
 					<Link href="/login">
 						<button 
-						className="px-6 py-3 m-1.5 text-white text-lg rounded-full bg-[var(--color-brand)] hover:bg-[var(--color-brand-darkest)]">
+						className="px-6 py-3 m-1.5 text-white text-lg rounded-full bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)]">
 						Log In
 						</button>
 					</Link>

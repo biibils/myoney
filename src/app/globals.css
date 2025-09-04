@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-	--color-brand: #2563EB; /* Blue for brand accent */
-	--color-brand-darkest: #1e40af; /* Darker Blue for brand accent */
-	--color-background: #f3f3f3; /* Light background color */
-	--color-surface: #f9fafb; /* Light surface color */
-	--color-text: #111827; /* Dark text color */
-	--color-text-secondary: #6b7280; /* Medium gray for secondary text */
-	--color-border: #e5e7eb; /* Light border color */
-	--color-succes: #22C55e; /* Green for success messages */
+	--color-brand: #3ea884; /* Blue for brand accent, inspired by Tanjirou */
+	--color-brand-hover: #29795e; /* Darker Blue for hover state */
+	--color-brand-clicked: #184636; /* Even Darker Blue for clicked state */
+	--color-background: #f3fffb; /* Light background color */
+	--color-background-dark: #000c07; /* Dark background color */
+	--color-text: #02110c; /* Dark text color */
+	--color-text-dark: #edfdf7; /* Light text color for dark backgrounds */
+	--color-succes: #00d790; /* Green for success messages */
 	--color-warning: #fbbf24; /* Yellow for warnings */
-	--color-error: #ef4444; /* Red for error messages */
+	--color-error: #b82f4f; /* Red for error messages, inspired by Giyuu Tomioka */
 }
 
 h1, h2, h3 {
@@ -24,7 +24,7 @@ p {
 	color: var(--color-text);
 }
 
-nav {
+.landingnav {
 	font-family: var(--font-urbanist);
 	font-weight: 400;
 	margin: 1rem;
@@ -49,6 +49,11 @@ aside {
 		rgba(255, 255, 255, 0.2) 100%
 	);
 	backdrop-filter: blur(10px);
+}
+
+.menu-mobile {
+	margin-top: 0.25rem;
+	border-radius: 0.375rem;
 }
 
 .card {
