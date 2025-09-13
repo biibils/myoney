@@ -8,30 +8,24 @@ export default function Navbar() {
 			<nav className="landingnav navbar flex rounded-full items-center justify-between max-w-fit z-50">
 				<div className="navbar-start justify-center items-center p-4">
 					<Link href="#">
-						<Image src="/home.svg" alt="Logo" width={30} height={30} className="object-contain" />					
+						<Image src="/home-l.svg" alt="Logo" width={30} height={30} className="object-contain" />
 					</Link>
 				</div>
 				<div className="justify-center items-center">
 					<ul className="flex mx-1 space-x-1">
 						<li className="p-2 rounded-full">
 							<Link href="#">
-								<Image src="/about.svg" alt="About" 
-								width={30} height={30} 
-								className="object-contain hover:scale-150" />
+								<Image src="/about-l.svg" alt="Tentang Kami" width={30} height={30} className="object-contain hover:scale-150" />
 							</Link>
 						</li>
 						<li className="p-2 rounded-full">
 							<Link href="#">
-								<Image src="/pricing.svg" alt="Pricing" 
-								width={30} height={30} 
-								className="object-contain hover:scale-150" />
+								<Image src="/pricing-l" alt="Pricing" width={30} height={30} className="object-contain hover:scale-150" />
 							</Link>
 						</li>
 						<li className="p-2 rounded-full">
 							<Link href="#">
-								<Image src="/contact.svg" alt="Contact" 
-								width={30} height={30} 
-								className="object-contain hover:scale-150" />
+								<Image src="/contact-l.svg" alt="Contact" width={30} height={30} className="object-contain hover:scale-150" />
 							</Link>
 						</li>
 					</ul>
