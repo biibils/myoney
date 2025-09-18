@@ -36,7 +36,7 @@ export async function signup(formData: FormData) {
 			const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString()
 
     	const { error: profileError } = await supabase
-      	.from('users')
+      	.from('profiles')
       	.insert([
         	{
           	id: user.id,

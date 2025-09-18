@@ -1,11 +1,10 @@
-import { createClient } from '@/utils/supabase/client'
+import { supabase } from '@/utils/supabase/client'
 import React from 'react'
 import Image from 'next/image'
 
 
 export const GoogleAuthButton: React.FC = () => {
   const handleGoogleLogin = async () => {
-    const supabase = createClient()
 		await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
